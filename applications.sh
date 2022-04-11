@@ -46,6 +46,8 @@ sudo apt-get install pandoc -y
 
 sudo apt-get install shellcheck -y
 
+sudo apt-get install discord -y
+
 sudo apt-get install spotify-client -y
 
 sudo apt-get install pdf2svg -y
@@ -68,14 +70,7 @@ pip install Jupyter
 
 flatpak install flathub org.telegram.desktop -y
 
-flatpak install flathub com.discordapp.Discord -y
-# https://discord.com/api/download?platform=linux&format=deb
-
 flatpak install flathub com.github.debauchee.barrier -y
-
-flatpak install flathub com.jetbrains.PyCharm-Professional -y
-
-flatpak install flathub com.jetbrains.CLion -y
 
 flatpak install flathub com.obsproject.Studio -y
 
