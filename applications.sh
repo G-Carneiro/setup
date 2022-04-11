@@ -52,6 +52,8 @@ sudo apt-get install mailspring -y
 
 sudo apt-get install spotify-client -y
 
+sudo apt-get install bitwarden -y
+
 sudo apt-get install pdf2svg -y
 
 sudo apt-get install brave-browser -y
@@ -81,9 +83,6 @@ flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub io.github.lainsce.Colorway -y
 
 flatpak install flathub io.github.lainsce.Emulsion -y
-
-# TODO: https://bitwarden.com/download/
-# https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb
 
 ## Final mensage ##
 
