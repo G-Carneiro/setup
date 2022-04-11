@@ -22,49 +22,49 @@ sudo add-apt-repository ppa:tatokis/ckb-next-git -y
 
 	## Installation
 
-sudo apt-get update -y
+sudo apt update -y
 
-sudo apt-get install git -y
+sudo apt install git -y
 
-sudo apt-get install python3-pip -y
+sudo apt install python3-pip -y
 
-sudo apt-get install python3.8-venv -y
+sudo apt install python3.8-venv -y
 
-sudo apt-get install python3.8-tk -y
+sudo apt install python3.8-tk -y
 
-sudo apt-get install whatsapp-desktop -y
+sudo apt install whatsapp-desktop -y
 
-sudo apt-get install neovim -y
+sudo apt install neovim -y
 
-sudo apt-get install flameshot -y
+sudo apt install flameshot -y
 
-sudo apt-get install gnome-clocks -y
+sudo apt install gnome-clocks -y
 
-sudo apt-get install texlive-full -y
+sudo apt install texlive-full -y
 
-sudo apt-get install pandoc -y
+sudo apt install pandoc -y
 
-sudo apt-get install shellcheck -y
+sudo apt install shellcheck -y
 
-sudo apt-get install discord -y
+sudo apt install discord -y
 
-sudo apt-get install mailspring -y
+sudo apt install mailspring -y
 
-sudo apt-get install spotify-client -y
+sudo apt install spotify-client -y
 
-sudo apt-get install bitwarden -y
+sudo apt install bitwarden -y
 
-sudo apt-get install pdf2svg -y
+sudo apt install pdf2svg -y
 
-sudo apt-get install brave-browser -y
+sudo apt install brave-browser -y
 
-sudo apt-get install xournalpp -y
+sudo apt install xournalpp -y
 
-sudo apt-get install inkscape -y
+sudo apt install inkscape -y
 
-sudo apt-get install ckb-next -y
+sudo apt install ckb-next -y
 
-sudo apt-get update -y
+sudo apt update -y
 
 pip install --upgrade pip
 
