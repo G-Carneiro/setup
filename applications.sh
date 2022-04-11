@@ -14,11 +14,9 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 	# PPAs
 
-sudo add-apt-repository ppa:apandada1/xournalpp-stable -y
-
 sudo add-apt-repository ppa:inkscape.dev/stable -y
 
-sudo add-apt-repository ppa:tatokis/ckb-next-git -y
+sudo add-apt-repository ppa:tatokis/ckb-next -y
 
 	## Installation
 
@@ -58,8 +56,6 @@ sudo apt install pdf2svg -y
 
 sudo apt install brave-browser -y
 
-sudo apt install xournalpp -y
-
 sudo apt install inkscape -y
 
 sudo apt install ckb-next -y
@@ -83,6 +79,8 @@ flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub io.github.lainsce.Colorway -y
 
 flatpak install flathub io.github.lainsce.Emulsion -y
+
+flatpak install flathub com.github.xournalpp.xournalpp -y
 
 ## Final mensage ##
 
