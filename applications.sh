@@ -2,15 +2,19 @@
 
 # Variables
 
-ppa_inkscape="ppa:inkscape.dev/stable"
-ppa_ckb="ppa:tatokis/ckb-next"
-
-url_pcloud="https://www.pcloud.com/how-to-install-pcloud-drive-linux.html?download=electron-64"
-url_bitwarden="https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
-url_toolbox="https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
-url_droidcam="https://files.dev47apps.net/linux/droidcam_1.8.2.zip"
-
 apps_dir="$HOME/Downloads/Applications"
+
+ppas=(
+ "inkscape.dev/stable"
+ "tatokis/ckb-next"
+)
+
+urls=(
+  "https://www.pcloud.com/how-to-install-pcloud-drive-linux.html?download=electron-64"
+  "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
+  "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
+)
+url_droidcam="https://files.dev47apps.net/linux/droidcam_1.8.2.zip"
 
 apt_packages=(
   apt-transport-https   # required for brave-browser
@@ -50,9 +54,10 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 	# PPAs
 
-sudo add-apt-repository ppa:inkscape.dev/stable -y
-
-sudo add-apt-repository ppa:tatokis/ckb-next -y
+for apt_repository in "${ppas[@]}"; do
+  sudo add-apt-repository "ppa:$apt_repository"
+  echo "[Added] $apt_repository"
+done
 
 	## Installation
 
