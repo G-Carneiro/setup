@@ -10,9 +10,9 @@ ppas=(
 )
 
 urls=(
-  "https://www.pcloud.com/how-to-install-pcloud-drive-linux.html?download=electron-64"
-  "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
+  "https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
 )
+  # TODO: extract tar.gz
 
 apt_packages=(
   apt-transport-https   # required for brave-browser
