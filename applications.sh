@@ -12,6 +12,20 @@ url_droidcam="https://files.dev47apps.net/linux/droidcam_1.8.2.zip"
 
 apps_dir="$HOME/Downloads/Applications"
 
+apt_packages=(
+  git
+  whatsapp-desktop
+  gnome-clocks
+  texlive-full
+  shellcheck
+  discord
+  mailspring
+  spotify-client
+  pdf2svg
+  freedownloadmanager
+  google-chrome-stable
+)
+
 cd "$apps_dir" || exit
 
 	# Browser requirements
@@ -32,8 +46,6 @@ sudo add-apt-repository ppa:tatokis/ckb-next -y
 
 sudo apt update -y
 
-sudo apt install git -y
-
 # TODO: change python version and install all about python
 sudo apt install python3-pip -y
 
@@ -41,29 +53,9 @@ sudo apt install python3.8-venv -y
 
 sudo apt install python3.8-tk -y
 
-sudo apt install whatsapp-desktop -y
-
-sudo apt install gnome-clocks -y
-
-sudo apt install texlive-full -y
-
-sudo apt install shellcheck -y
-
-sudo apt install discord -y
-
-sudo apt install mailspring -y
-
-sudo apt install spotify-client -y
-
 sudo apt install bitwarden -y
 
-sudo apt install pdf2svg -y
-
-sudo apt install freedownloadmanager -y
-
 sudo apt install brave-browser -y
-
-sudo apt install google-chrome-stable -y  # TODO: remove?
 
 sudo apt install inkscape -y
 
