@@ -32,8 +32,6 @@ sudo apt install python3.8-tk -y
 
 sudo apt install whatsapp-desktop -y
 
-sudo apt install neovim -y
-
 sudo apt install gnome-clocks -y
 
 sudo apt install texlive-full -y
@@ -81,6 +79,8 @@ flatpak install flathub io.github.lainsce.Emulsion -y
 flatpak install flathub com.github.xournalpp.xournalpp -y
 
 flatpak install flathub org.flameshot.Flameshot -y
+
+flatpak install flathub io.neovim.nvim -y
 
 ## Final message ##
 
