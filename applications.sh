@@ -1,8 +1,19 @@
 #!/bin/bash
 
+# Variables
+
+ppa_inkscape="ppa:inkscape.dev/stable"
+ppa_ckb="ppa:tatokis/ckb-next"
+
+url_pcloud="https://www.pcloud.com/how-to-install-pcloud-drive-linux.html?download=electron-64"
+url_bitwarden="https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
+url_toolbox="https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
+
 # Repository programs
 
-# bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
+cd "$HOME/Documents/" || exit
+mkdir "Applications"
+cd Applications || exit
 
 	# Browser requirements
 
@@ -24,6 +35,7 @@ sudo apt update -y
 
 sudo apt install git -y
 
+# TODO: change python version and install all about python
 sudo apt install python3-pip -y
 
 sudo apt install python3.8-venv -y
@@ -36,21 +48,23 @@ sudo apt install gnome-clocks -y
 
 sudo apt install texlive-full -y
 
-sudo apt install pandoc -y
-
 sudo apt install shellcheck -y
 
 sudo apt install discord -y
 
 sudo apt install mailspring -y
 
-sudo apt install spotify-client -y
+sudo apt install spotify-client -y  # TODO
 
 sudo apt install bitwarden -y
 
 sudo apt install pdf2svg -y
 
+sudo apt install freedownloadmanager -y
+
 sudo apt install brave-browser -y
+
+sudo apt install google-chrome-stable -y  # TODO: remove?
 
 sudo apt install inkscape -y
 
@@ -59,8 +73,6 @@ sudo apt install ckb-next -y
 sudo apt update -y
 
 pip install --upgrade pip
-
-pip install Jupyter
 
 # Flatpaks
 
