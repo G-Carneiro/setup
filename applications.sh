@@ -26,6 +26,18 @@ apt_packages=(
   google-chrome-stable
 )
 
+flatpak_packages=(
+  io.neovim.nvim
+  org.telegram.desktop
+  org.flameshot.Flameshot
+  com.github.debauchee.barrier
+  com.github.xournalpp.xournalpp
+  io.github.lainsce.Colorway
+  io.github.lainsce.Emulsion
+  org.kde.kdenlive
+  com.obsproject.Studio
+)
+
 cd "$apps_dir" || exit
 
 	# Browser requirements
@@ -66,24 +78,6 @@ sudo apt update -y
 pip install --upgrade pip
 
 # Flatpaks
-
-flatpak install flathub org.telegram.desktop -y
-
-flatpak install flathub com.github.debauchee.barrier -y
-
-flatpak install flathub com.obsproject.Studio -y
-
-flatpak install flathub org.kde.kdenlive -y
-
-flatpak install flathub io.github.lainsce.Colorway -y
-
-flatpak install flathub io.github.lainsce.Emulsion -y
-
-flatpak install flathub com.github.xournalpp.xournalpp -y
-
-flatpak install flathub org.flameshot.Flameshot -y
-
-flatpak install flathub io.neovim.nvim -y
 
 ## Final message ##
 
