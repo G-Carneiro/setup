@@ -1,10 +1,7 @@
 #!/bin/bash
 
-name=$1
+discipline=$1
 path=$2
+newpath="$path/$discipline"
 
-cd "$path" || exit
-mkdir "$name"
-
-cd "$name" || exit
-mkdir Slides Trabalhos Provas
+mkdir "$newpath" "$newpath/Slides" "$newpath/Trabalhos" "$newpath/Provas"
