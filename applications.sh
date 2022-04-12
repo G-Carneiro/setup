@@ -89,6 +89,10 @@ done
 
 sudo dpkg -i "$apps_dir/*.deb"
 
+for file in "$apps_dir"/*.tar.gz; do
+  tar -xzvf "$file";
+done
+
 # Clean, update and upgrade
 
 pip install --upgrade pip
