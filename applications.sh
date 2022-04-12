@@ -13,6 +13,8 @@ url_droidcam="https://files.dev47apps.net/linux/droidcam_1.8.2.zip"
 apps_dir="$HOME/Downloads/Applications"
 
 apt_packages=(
+  apt-transport-https   # required for brave-browser
+  curl                  # required for brave-browser
   git
   whatsapp-desktop
   gnome-clocks
@@ -41,8 +43,6 @@ flatpak_packages=(
 cd "$apps_dir" || exit
 
 	# Browser requirements
-
-sudo apt install apt-transport-https curl -y
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg -y
 
@@ -77,7 +77,19 @@ sudo apt update -y
 
 pip install --upgrade pip
 
-# Flatpaks
+# Install apt packages
+
+for program in "${apt_packages[@]}"; do
+  apt install "$program" -y
+  echo "[Installed] - $program"
+done
+
+# Install Flatpak packages
+
+for program in "${flatpak_packages[@]}"; do
+  flatpak install flathub "$program" -y
+  echo "[Installed] - $program"
+done
 
 ## Final message ##
 
