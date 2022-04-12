@@ -34,8 +34,6 @@ sudo apt install whatsapp-desktop -y
 
 sudo apt install neovim -y
 
-sudo apt install flameshot -y
-
 sudo apt install gnome-clocks -y
 
 sudo apt install texlive-full -y
@@ -82,6 +80,8 @@ flatpak install flathub io.github.lainsce.Emulsion -y
 
 flatpak install flathub com.github.xournalpp.xournalpp -y
 
-## Final mensage ##
+flatpak install flathub org.flameshot.Flameshot -y
+
+## Final message ##
 
 echo "All installations have been completed!"
