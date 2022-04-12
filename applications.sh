@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Variables
+# FIXME: wait mailspring, bitwarden, toolbox and pcloud release auto update apt
+#  or oficial flatpak support or generic link download (agnostic version).
 
+# Variables
 apps_dir="$HOME/Downloads/Applications"
 
 ppas=(
@@ -12,7 +14,6 @@ ppas=(
 urls=(
   "https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
 )
-  # TODO: extract tar.gz
 
 apt_packages=(
   apt-transport-https   # required for brave-browser
@@ -51,14 +52,12 @@ flatpak_packages=(
   com.obsproject.Studio             # only desktop
 )
 
-	# Browser requirements
-
+# Brave Browser requirements
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg -y
 
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
-	# PPAs
-
+# Add third party packages - PPAs
 sudo apt update -y
 
 for apt_repository in "${ppas[@]}"; do
@@ -67,7 +66,6 @@ for apt_repository in "${ppas[@]}"; do
 done
 
 # Install apt packages
-
 sudo apt update -y
 
 for program in "${apt_packages[@]}"; do
@@ -76,13 +74,12 @@ for program in "${apt_packages[@]}"; do
 done
 
 # Install Flatpak packages
-
 for program in "${flatpak_packages[@]}"; do
   flatpak install flathub "$program" -y
   echo "[Installed] - $program"
 done
 
-# URL's
+# Download files from URL's and install
 for url in "${urls[@]}"; do
   wget -c "$url" -P "$apps_dir"
 done
@@ -94,7 +91,6 @@ for file in "$apps_dir"/*.tar.gz; do
 done
 
 # Clean, update and upgrade
-
 pip install --upgrade pip
 sudo apt update && sudo apt dist-upgrade -y
 flatpak update
@@ -102,5 +98,4 @@ sudo apt autoclean
 sudo apt autoremove -y
 
 ## Final message ##
-
 echo "All installations have been completed!"
