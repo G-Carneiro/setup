@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# This install all applications I need in post install linux distribution based in debian.
 # FIXME: wait mailspring, bitwarden, toolbox and pcloud release auto update apt
 #  or oficial flatpak support or generic link download (agnostic version).
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# This script solves most disk mount related issues (in my case).
 sudo ntfsfix /dev/sdc1
 sudo ntfsfix /dev/sdd1
 echo "Done: NTFSFIX"

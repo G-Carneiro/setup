@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Create dir for new discipline
 discipline=$1
 path=$2
 newpath="$path/$discipline"

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Reinstall droidcam (necessary if kernel is changed)
 url="https://files.dev47apps.net/linux/droidcam_1.8.2.zip"
 sudo /opt/droidcam-uninstall -y
 
