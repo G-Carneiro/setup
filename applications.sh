@@ -8,12 +8,11 @@ ppa_ckb="ppa:tatokis/ckb-next"
 url_pcloud="https://www.pcloud.com/how-to-install-pcloud-drive-linux.html?download=electron-64"
 url_bitwarden="https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
 url_toolbox="https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
+url_droidcam="https://files.dev47apps.net/linux/droidcam_1.8.2.zip"
 
-# Repository programs
+apps_dir="$HOME/Downloads/Applications"
 
-cd "$HOME/Documents/" || exit
-mkdir "Applications"
-cd Applications || exit
+cd "$apps_dir" || exit
 
 	# Browser requirements
 
@@ -54,7 +53,7 @@ sudo apt install discord -y
 
 sudo apt install mailspring -y
 
-sudo apt install spotify-client -y  # TODO
+sudo apt install spotify-client -y
 
 sudo apt install bitwarden -y
 
