@@ -30,6 +30,9 @@ apt_packages=(
   pdf2svg
   freedownloadmanager
   google-chrome-stable
+  brave-browser
+  inkscape
+  ckb-next
 )
 
 flatpak_packages=(
@@ -44,8 +47,6 @@ flatpak_packages=(
   com.obsproject.Studio
 )
 
-cd "$apps_dir" || exit
-
 	# Browser requirements
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg -y
@@ -53,6 +54,8 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 	# PPAs
+
+sudo apt update -y
 
 for apt_repository in "${ppas[@]}"; do
   sudo add-apt-repository "ppa:$apt_repository"
@@ -72,20 +75,12 @@ sudo apt install python3.8-tk -y
 
 sudo apt install bitwarden -y
 
-sudo apt install brave-browser -y
-
-sudo apt install inkscape -y
-
-sudo apt install ckb-next -y
-
 sudo apt update -y
-
-pip install --upgrade pip
 
 # Install apt packages
 
 for program in "${apt_packages[@]}"; do
-  apt install "$program" -y
+  sudo apt install "$program" -y
   echo "[Installed] - $program"
 done
 
@@ -95,6 +90,21 @@ for program in "${flatpak_packages[@]}"; do
   flatpak install flathub "$program" -y
   echo "[Installed] - $program"
 done
+
+# URL's
+for url in "${urls[@]}"; do
+  wget -c "$url" -P "$apps_dir"
+done
+
+sudo dpkg -i "$apps_dir/*.deb"
+
+# Clean, update and upgrade
+
+pip install --upgrade pip
+sudo apt update && sudo apt dist-upgrade -y
+flatpak update
+sudo apt autoclean
+sudo apt autoremove -y
 
 ## Final message ##
 
