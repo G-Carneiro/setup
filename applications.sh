@@ -12,9 +12,7 @@ ppas=(
 urls=(
   "https://www.pcloud.com/how-to-install-pcloud-drive-linux.html?download=electron-64"
   "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
-  "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
 )
-url_droidcam="https://files.dev47apps.net/linux/droidcam_1.8.2.zip"
 
 apt_packages=(
   apt-transport-https   # required for brave-browser
@@ -29,10 +27,16 @@ apt_packages=(
   spotify-client
   pdf2svg
   freedownloadmanager
+  python3.9-full
+  python3.9-dev
+  python3.9-dbg
+  python3-tk-dbg
+  python3-pip
   google-chrome-stable
+  bitwarden
   brave-browser
   inkscape
-  ckb-next
+  ckb-next              # only desktop
 )
 
 flatpak_packages=(
@@ -43,8 +47,8 @@ flatpak_packages=(
   com.github.xournalpp.xournalpp
   io.github.lainsce.Colorway
   io.github.lainsce.Emulsion
-  org.kde.kdenlive
-  com.obsproject.Studio
+  org.kde.kdenlive                  # only desktop
+  com.obsproject.Studio             # only desktop
 )
 
 	# Browser requirements
@@ -62,22 +66,9 @@ for apt_repository in "${ppas[@]}"; do
   echo "[Added] $apt_repository"
 done
 
-	## Installation
-
-sudo apt update -y
-
-# TODO: change python version and install all about python
-sudo apt install python3-pip -y
-
-sudo apt install python3.8-venv -y
-
-sudo apt install python3.8-tk -y
-
-sudo apt install bitwarden -y
-
-sudo apt update -y
-
 # Install apt packages
+
+sudo apt update -y
 
 for program in "${apt_packages[@]}"; do
   sudo apt install "$program" -y
