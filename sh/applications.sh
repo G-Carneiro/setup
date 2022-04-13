@@ -8,7 +8,6 @@
 apps_dir="$HOME/Downloads/Applications"
 
 ppas=(
- "inkscape.dev/stable"
  "tatokis/ckb-next"
 )
 
@@ -44,6 +43,7 @@ apt_packages=(
 flatpak_packages=(
   io.neovim.nvim
   org.telegram.desktop
+  org.inkscape.Inkscape
   org.flameshot.Flameshot
   com.github.debauchee.barrier
   com.github.xournalpp.xournalpp
