@@ -12,6 +12,8 @@ ppas=(
 )
 
 urls=(
+  "https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb"
+  "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
   "https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
 )
 
@@ -24,19 +26,14 @@ apt_packages=(
   texlive-full
   shellcheck
   discord
-  mailspring
   spotify-client
   pdf2svg
-  freedownloadmanager
   python3.9-full
   python3.9-dev
   python3.9-dbg
   python3-tk-dbg
   python3-pip
-  google-chrome-stable
-  bitwarden
   brave-browser
-  inkscape
   ckb-next              # only desktop
 )
 
