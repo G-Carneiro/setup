@@ -1,7 +1,10 @@
 #!/bin/bash
 
-dir=$1
-icon=$2
+target_dir=$1
+icons_dir=$2
 
-gio set -t string "$dir" metadata::custom-icon file://"$icon"
+cd "$icons_dir" || exit
+for file in *; do
+  gio set -t string "$target_dir/${file%.*}" metadata::custom-icons_dir file://"$icons_dir/$file";
+done
 
