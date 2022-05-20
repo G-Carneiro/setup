@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This install all applications I need in post install linux distribution based in debian.
-# FIXME: wait mailspring, bitwarden, toolbox and pcloud release auto update apt
+# FIXME: wait discord, mailspring, bitwarden, toolbox and pcloud release auto update apt
 #  or oficial flatpak support or generic link download (agnostic version).
 
 # Variables
@@ -21,11 +21,11 @@ apt_packages=(
   apt-transport-https   # required for brave-browser
   curl                  # required for brave-browser
   git
-  whatsapp-desktop
+  pandoc
+  whatsapp-desktop      # wait official support
   gnome-clocks
   texlive-full
   shellcheck
-  discord
   spotify-client
   pdf2svg
   python3.9-full
