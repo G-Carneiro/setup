@@ -35,6 +35,17 @@ apt_packages=(
   python3-pip
   brave-browser
   ckb-next              # only desktop
+  # pympress dependencies
+  pympress
+  libgtk-3-0
+  libpoppler-glib8
+  libcairo2
+  python3-gi
+  python3-gi-cairo
+  gobject-introspection
+  libgirepository-1.0-1
+  gir1.2-gtk-3.0
+  gir1.2-poppler-0.18
 )
 
 flatpak_packages=(
