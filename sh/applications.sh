@@ -23,6 +23,7 @@ apt_packages=(
   git
   pandoc
   whatsapp-desktop      # wait official support
+  grub-customizer
   gnome-clocks
   texlive-full
   shellcheck
