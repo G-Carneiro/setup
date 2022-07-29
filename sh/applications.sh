@@ -14,7 +14,7 @@
 
 # Variables
 apps_dir="$HOME/Downloads/Applications"
-python_version=3.9
+python_version=python3.9
 
 ppas=(
  tatokis/ckb-next
@@ -37,9 +37,9 @@ apt_packages=(
   shellcheck
   spotify-client
   pdf2svg
-  python"$python_version"-full
-  python"$python_version"-dev
-  python"$python_version"-dbg
+  "$python_version"-full
+  "$python_version"-dev
+  "$python_version"-dbg
   python3-tk-dbg
   python3-pip
   brave-browser
@@ -68,6 +68,11 @@ flatpak_packages=(
   io.github.lainsce.Emulsion
   org.kde.kdenlive                  # only desktop
   com.obsproject.Studio             # only desktop
+)
+
+remove_apt=(
+  thunderbird
+  idle-"$python_version"
 )
 
 # Brave Browser requirements
