@@ -60,6 +60,7 @@ apt_packages=(
   gir1.2-poppler-0.18
 )
 
+# TODO: change to dict
 flatpak_packages=(
   io.neovim.nvim
   org.telegram.desktop
