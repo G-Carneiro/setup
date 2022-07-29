@@ -1,27 +1,35 @@
 #!/bin/bash
 
+# Manually install
+# discord     https://discord.com/download
+# bitwarden   https://bitwarden.com/download/
+# mailspring  https://getmailspring.com/download
+# toolbox     https://www.jetbrains.com/toolbox-app/
+# pandoc      https://github.com/jgm/pandoc/releases/latest
+# pcloud      https://www.pcloud.com/download-free-online-cloud-file-storage.html
+
 # This install all applications I need in post install linux distribution based in debian.
 # FIXME: wait discord, mailspring, bitwarden, toolbox and pcloud release auto update apt
 #  or oficial flatpak support or generic link download (agnostic version).
 
 # Variables
 apps_dir="$HOME/Downloads/Applications"
+python_version=3.9
 
 ppas=(
- "tatokis/ckb-next"
+ tatokis/ckb-next
+ lutris-team/lutris
 )
 
 urls=(
   "https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb"
   "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-  "https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.23.11731.tar.gz"
 )
 
 apt_packages=(
   apt-transport-https   # required for brave-browser
   curl                  # required for brave-browser
   git
-  pandoc
   whatsapp-desktop      # wait official support
   grub-customizer
   gnome-clocks
@@ -29,9 +37,9 @@ apt_packages=(
   shellcheck
   spotify-client
   pdf2svg
-  python3.9-full
-  python3.9-dev
-  python3.9-dbg
+  python"$python_version"-full
+  python"$python_version"-dev
+  python"$python_version"-dbg
   python3-tk-dbg
   python3-pip
   brave-browser
