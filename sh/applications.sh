@@ -7,8 +7,9 @@
 # pcloud      https://www.pcloud.com/download-free-online-cloud-file-storage.html
 
 # This install all applications I need in post install linux distribution based in debian.
-# FIXME: bitwarden, toolbox, pandoc and pcloud release auto update apt
-#  or oficial flatpak support or generic link download (agnostic version).
+# FIXME: wait brave-browser, anydesk, bitwarden, toolbox, pandoc and pcloud
+#  release auto update apt or oficial flatpak support or generic link download (agnostic version).
+# TODO: install pympress by default or not? https://github.com/Cimbali/pympress/
 
 # Variables
 apps_dir="$HOME/Downloads/Applications"
@@ -28,65 +29,52 @@ deb_to_url=(
 )
 
 apt_packages=(
-  apt-transport-https   # required for brave-browser
-  curl                  # required for brave-browser
+  anydesk
+  brave-browser
+  ckb-next                # only desktop
   git
-  whatsapp-desktop      # wait official support
-  grub-customizer
   gnome-clocks
-  texlive-full
-  shellcheck
-  spotify-client
+  grub-customizer
   pdf2svg
-  "$python_version"-full
   "$python_version"-dev
   "$python_version"-dbg
-  python3-tk-dbg
+  "$python_version"-full
   python3-pip
-  brave-browser
-  anydesk
-  ckb-next              # only desktop
-  # pympress dependencies
-  pympress
-  libgtk-3-0
-  libpoppler-glib8
-  libcairo2
-  python3-gi
-  python3-gi-cairo
-  gobject-introspection
-  libgirepository-1.0-1
-  gir1.2-gtk-3.0
-  gir1.2-poppler-0.18
+  python3-tk-dbg
+  shellcheck
+  spotify-client
+  texlive-full
+  whatsapp-desktop        # wait official support
 )
 
 declare -A flatpak_packages
 flatpak_packages=(
-  [neovim]=io.neovim.nvim
-  [telegram]=org.telegram.desktop
-  [inkscape]=org.inkscape.Inkscape
-  [flameshot]=org.flameshot.Flameshot
-  [barrier]=com.github.debauchee.barrier
-  [xournalpp]=com.github.xournalpp.xournalpp
-  [colorway]=io.github.lainsce.Colorway
-  [emulsion]=io.github.lainsce.Emulsion
-  [kdenlive]=org.kde.kdenlive                  # only desktop
-  [obs]=com.obsproject.Studio             # only desktop
+  [barrier]=com.github.debauchee.barrier      # official support
+  [colorway]=io.github.lainsce.Colorway       # official support
+  [emulsion]=io.github.lainsce.Emulsion       # official support
+  [flameshot]=org.flameshot.Flameshot         # official support
+  [inkscape]=org.inkscape.Inkscape            # official support
+  [kdenlive]=org.kde.kdenlive                 # official support
+  [neovim]=io.neovim.nvim                     # official support
+  [obs-studio]=com.obsproject.Studio          # official support
+  [telegram]=org.telegram.desktop             # official support
+  [xournalpp]=com.github.xournalpp.xournalpp  # official support
 )
 
 remove_apt=(
-  sticky                  # notes
-  thunderbird             # email manager
   firefox
   firefox-locale-en
   firefox-locale-pt
   hexchat-common
-  libreoffice-common
   idle-"$python_version"
+  libreoffice-common
+  sticky                  # notes
+  thunderbird             # email manager
 )
 
 # Brave Browser requirements
+sudo apt install apt-transport-https curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg -y
-
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 # AnyDesk requirements
