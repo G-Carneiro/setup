@@ -20,7 +20,6 @@ ppas=(
 )
 
 declare -A deb_to_url
-
 deb_to_url=(
   [discord]="https://discord.com/api/download?platform=linux&format=deb"
   [mailspring]="https://updates.getmailspring.com/download?platform=linuxDeb"
@@ -60,18 +59,18 @@ apt_packages=(
   gir1.2-poppler-0.18
 )
 
-# TODO: change to dict
+declare -A flatpak_packages
 flatpak_packages=(
-  io.neovim.nvim
-  org.telegram.desktop
-  org.inkscape.Inkscape
-  org.flameshot.Flameshot
-  com.github.debauchee.barrier
-  com.github.xournalpp.xournalpp
-  io.github.lainsce.Colorway
-  io.github.lainsce.Emulsion
-  org.kde.kdenlive                  # only desktop
-  com.obsproject.Studio             # only desktop
+  [neovim]=io.neovim.nvim
+  [telegram]=org.telegram.desktop
+  [inkscape]=org.inkscape.Inkscape
+  [flameshot]=org.flameshot.Flameshot
+  [barrier]=com.github.debauchee.barrier
+  [xournalpp]=com.github.xournalpp.xournalpp
+  [colorway]=io.github.lainsce.Colorway
+  [emulsion]=io.github.lainsce.Emulsion
+  [kdenlive]=org.kde.kdenlive                  # only desktop
+  [obs]=com.obsproject.Studio             # only desktop
 )
 
 remove_apt=(
@@ -111,8 +110,8 @@ for program in "${apt_packages[@]}"; do
 done
 
 # Install Flatpak packages
-for program in "${flatpak_packages[@]}"; do
-  flatpak install flathub "$program" -y
+for program in "${!flatpak_packages[@]}"; do
+  flatpak install flathub "${flatpak_packages[program]}" -y
   echo "[Installed] - $program"
 done
 
