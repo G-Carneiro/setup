@@ -13,6 +13,9 @@
 
 # Variables
 python_version=python3.9
+apps_dir="$HOME/Downloads/Applications"
+deb_dir="$apps_dir/deb"
+appImage_dir="$apps_dir/AppImage"
 
 ppas=()
 
@@ -74,7 +77,50 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
 echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
 
-bash ./appications "${ppas[@]}" "${apt_packages[@]}" "${!flatpak_packages[@]}" "${!deb_to_url[@]}" "${remove_apt[@]}"
+# Add third party packages - PPAs
+sudo apt update -y
+
+for apt_repository in "${ppas[@]}"; do
+  sudo add-apt-repository "ppa:$apt_repository"
+  echo "[Added] - $apt_repository"
+done
+
+# Install apt packages
+sudo apt update -y
+
+for program in "${apt_packages[@]}"; do
+  sudo apt install "$program" -y
+  echo "[Installed] - $program"
+done
+
+# Install Flatpak packages
+for program in "${!flatpak_packages[@]}"; do
+  flatpak install flathub "${flatpak_packages[program]}" -y
+  echo "[Installed] - $program"
+done
+
+# Download files from URL's and install
+mkdir "$apps_dir" "$deb_dir" "$appImage_dir"
+for key in "${!deb_to_url[@]}"; do
+  file="${deb_dir}/${key}.deb"
+  wget -q -O "$file" -c "${deb_to_url[$key]}"
+  sudo dpkg -i "$file"
+  echo "[Installed] - $key"
+done
+
+for program in "${remove_apt[@]}"; do
+  sudo apt remove "$program" -y
+  echo "[Removed] - $program"
+done
 
 pip install --upgrade pip
 pip install jupyter
+
+# Clean, update and upgrade
+sudo apt update && sudo apt dist-upgrade -y
+flatpak update
+sudo apt autoclean
+sudo apt autoremove -y
+
+## Final message ##
+echo "All installations have been completed!"
