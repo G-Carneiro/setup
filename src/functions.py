@@ -53,3 +53,19 @@ def update_upgrade() -> None:
 def apt_update() -> None:
     system("sudo apt update -y")
     return None
+
+
+def install_brave() -> None:
+    system("sudo apt install apt-transport-https curl -y \n"
+           "sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg "
+           "https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg -y \n"
+           "echo deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] "
+           "https://brave-browser-apt-release.s3.brave.com/ stable main "
+           "| sudo tee /etc/apt/sources.list.d/brave-browser-release.list")
+    return None
+
+
+def install_anydesk() -> None:
+    system("wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add - \n"
+           "echo deb http://deb.anydesk.com/ all main > /etc/apt/sources.list.d/anydesk-stable.list")
+    return None
