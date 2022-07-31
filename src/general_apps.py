@@ -2,7 +2,6 @@ from typing import List, Dict
 
 from .functions import PYTHON_VERSION
 
-
 # Manually install
 # bitwarden   https://bitwarden.com/download/
 # toolbox     https://www.jetbrains.com/toolbox-app/

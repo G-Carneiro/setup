@@ -8,6 +8,14 @@ APPIMAGE_DIRECTORY: str = f"{APPS_DIRECTORY}/deb"
 DEB_DIRECTORY: str = f"{APPS_DIRECTORY}/AppImage"
 
 
+def add_apt_repository(programs: List[str]) -> None:
+    for program in programs:
+        system(f"sudo add-apt-repository ppa:{program} \n"
+               f"echo [Added] - {program}")
+
+    return None
+
+
 def remove_apt(programs: List[str]) -> None:
     for program in programs:
         system(f"sudo apt remove {program} -y \n"
