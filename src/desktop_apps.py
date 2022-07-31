@@ -1,5 +1,7 @@
 from typing import Dict, List
 
+
+# TODO: find multiseat solution (like aster for windows https://www.asterpro.com.br/)
 ppas: List[str] = [
     "tatokis/ckb-next",
     "lutris-team/lutris"
