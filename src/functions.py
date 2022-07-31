@@ -53,5 +53,3 @@ def update_upgrade() -> None:
 def apt_update() -> None:
     system("sudo apt update -y")
     return None
-
-
