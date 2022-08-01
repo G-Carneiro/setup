@@ -12,6 +12,7 @@ from .functions import PYTHON_VERSION
 # FIXME: wait brave-browser, anydesk, bitwarden, toolbox, pandoc and pcloud
 #  release auto update apt or oficial flatpak support or generic link download (agnostic version).
 # TODO: install pympress by default or not? https://github.com/Cimbali/pympress/
+# TODO: OnionShare or RetroShare?
 
 ppas: List[str] = []
 
