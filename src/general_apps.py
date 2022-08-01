@@ -28,6 +28,7 @@ apt_packages: List[str] = [
     "git",
     "gnome-clocks",
     "grub-customizer",
+    "inkscape",                 # flatpak version not support some features for tex files
     "pdf2svg",
     f"{PYTHON_VERSION}-dev",
     f"{PYTHON_VERSION}-dbg",
@@ -37,7 +38,7 @@ apt_packages: List[str] = [
     "shellcheck",
     "spotify-client",
     "texlive-full",
-    "whatsapp-desktop"        # wait official support
+    "whatsapp-desktop"          # wait official support
 ]
 
 flatpak_packages: Dict[str, str] = {
@@ -45,7 +46,8 @@ flatpak_packages: Dict[str, str] = {
     "colorway": "io.github.lainsce.Colorway",       # official support
     "emulsion": "io.github.lainsce.Emulsion",       # official support
     "flameshot": "org.flameshot.Flameshot",         # official support
-    "inkscape": "org.inkscape.Inkscape",            # official support
+    "flatseal": "com.github.tchx84.Flatseal",       # official support
+    # "inkscape": "org.inkscape.Inkscape",            # official support
     "neovim": "io.neovim.nvim",                     # official support
     "telegram": "org.telegram.desktop",             # official support
     "xournalpp": "com.github.xournalpp.xournalpp"   # official support
