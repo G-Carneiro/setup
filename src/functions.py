@@ -3,11 +3,8 @@ from typing import List, Dict
 
 
 # TODO: bookmarks, mount disks (/etc/fstab), change directories icons, mkdir
-PYTHON_VERSION: str = f"python3.9"
-HOME: str = "$HOME"
-APPS_DIRECTORY: str = f"{HOME}/Downloads/Applications"
-APPIMAGE_DIRECTORY: str = f"{APPS_DIRECTORY}/deb"
-DEB_DIRECTORY: str = f"{APPS_DIRECTORY}/AppImage"
+from .Symlink import Symlink
+from .global_variables import *
 
 
 def add_apt_repository(programs: List[str]) -> None:
@@ -83,4 +80,12 @@ def install_anydesk() -> None:
 
 def final_message() -> None:
     print("All installations have been completed!")
+    return None
+
+
+def create_symlinks(symlinks: List[Symlink]) -> None:
+    for symlink in symlinks:
+        system(f"ln -s {symlink.origin()} {symlink.destiny()}")
+        print(f"[Linked] - {symlink.name()}")
+
     return None
