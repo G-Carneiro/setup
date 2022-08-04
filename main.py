@@ -1,6 +1,6 @@
 from sys import argv
 
-from src.desktop_apps import *
+from src.desktop_apps import update_all_packages
 from src.functions import *
 from src.general_apps import *
 
@@ -12,11 +12,10 @@ if __name__ == "__main__":
         is_desktop = False
 
     if is_desktop:
-        ppas += desktop_ppas
-        apt_packages += desktop_apt_packages
-        remove_apt_packages += desktop_remove_apt_packages
-        deb_to_url.update(desktop_deb_to_url)
-        flatpak_packages.update(desktop_flatpak_packages)
+        update_all_packages(ppas=ppas, deb=deb_to_url,
+                            apt_packages=apt_packages,
+                            remove_apt_packages=remove_apt_packages,
+                            flatpak_packages=flatpak_packages)
 
     install_brave()
     install_anydesk()
