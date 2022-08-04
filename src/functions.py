@@ -4,7 +4,8 @@ from typing import List, Dict
 
 # TODO: bookmarks, mount disks (/etc/fstab), change directories icons, mkdir
 PYTHON_VERSION: str = f"python3.9"
-APPS_DIRECTORY: str = "/home/gabriel/Downloads/Applications"
+HOME: str = "$HOME"
+APPS_DIRECTORY: str = f"{HOME}/Downloads/Applications"
 APPIMAGE_DIRECTORY: str = f"{APPS_DIRECTORY}/deb"
 DEB_DIRECTORY: str = f"{APPS_DIRECTORY}/AppImage"
 
