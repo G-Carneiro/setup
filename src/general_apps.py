@@ -13,7 +13,6 @@ from .functions import PYTHON_VERSION
 #  release auto update apt or oficial flatpak support or generic link download (agnostic version).
 # TODO: install pympress by default or not? https://github.com/Cimbali/pympress/
 # TODO: OnionShare or RetroShare?
-# TODO: freedownloadmanager or motrix?
 
 ppas: List[str] = []
 
@@ -54,7 +53,7 @@ flatpak_packages: Dict[str, str] = {
     "whatsapp": "io.github.mimbrero.WhatsAppDesktop"    # unofficial support
 }
 
-remove_apt: List[str] = [
+remove_apt_packages: List[str] = [
     "firefox",
     "firefox-locale-en",
     "firefox-locale-pt",

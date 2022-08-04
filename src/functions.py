@@ -78,3 +78,8 @@ def install_anydesk() -> None:
     system("wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add - \n"
            "echo deb http://deb.anydesk.com/ all main > /etc/apt/sources.list.d/anydesk-stable.list")
     return None
+
+
+def final_message() -> None:
+    print("All installations have been completed!")
+    return None
