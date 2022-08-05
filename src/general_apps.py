@@ -14,6 +14,7 @@ from .global_variables import *
 #  release auto update apt or oficial flatpak support or generic link download (agnostic version).
 # TODO: install pympress by default or not? https://github.com/Cimbali/pympress/
 # TODO: OnionShare or RetroShare?
+# TODO: fdm or chrono?
 
 ppas: List[str] = []
 
@@ -69,6 +70,7 @@ symlinks: Dict[str, Symlink] = {
     "discord": Symlink(name="discord", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="settings.json"),
     "gitconfig": Symlink(name="gitconfig", origin=f"{NOTE_CONFIG}", destiny=f"{HOME}", file=".gitconfig"),
     "Mailspring": Symlink(name="Mailspring", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="keymap.json"),
+    "Mailspring-pref": Symlink(name="Mailspring", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="Preferences"),
     "telegram": Symlink(name="telegram", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="shortcuts-custom.json"),
     "whatsapp": Symlink(name="whatsapp", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="config.json")
 }

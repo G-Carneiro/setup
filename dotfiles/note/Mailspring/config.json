@@ -1,0 +1,286 @@
+{
+  "*": {
+    "env": "production",
+    "core": {
+      "themes": [
+        "ui-light"
+      ],
+      "disabledPackages": [
+        "message-view-on-github",
+        "personal-level-indicators",
+        "phishing-detection",
+        "nylas-private-salesforce",
+        "github-contact-card",
+        "keybase",
+        "composer-markdown",
+        "composer-scheduler",
+        "composer-mail-merge",
+        "send-and-archive",
+        "main-calendar"
+      ],
+      "workspace": {
+        "mode": "list",
+        "systemTray": true,
+        "use24HourClock": true
+      },
+      "keymapTemplate": "Gmail",
+      "translation": {
+        "disabled": [
+          "pt"
+        ],
+        "automatic": []
+      },
+      "theme": "ui-dark",
+      "composing": {
+        "spellcheck": true,
+        "spellcheckDefaultLanguage": "pt-BR"
+      },
+      "notifications": {
+        "sounds": false,
+        "countBadge": "total"
+      },
+      "sending": {
+        "sounds": false,
+        "defaultAccountIdForSend": "59ca86cf"
+      },
+      "tutorial": {
+        "seen": [
+          "ThreadSearchBar",
+          "ActivityListButton",
+          "ToolbarSnooze",
+          "ModeToggle",
+          "SendRemindersPopoverButton",
+          "LinkTrackingButton",
+          "OpenTrackingButton",
+          "SendLaterButton",
+          "SendRemindersComposerButton"
+        ]
+      },
+      "reading": {
+        "markAsReadDelay": 0,
+        "restrictMaxWidth": true
+      }
+    },
+    "identity": {
+      "id": "78efde4b-5ba5-4a56-92de-4b5e9bde45a8",
+      "firstName": "Gabriel",
+      "lastName": "Carneiro",
+      "emailAddress": "gabrielmedeiros1708@gmail.com",
+      "object": "identity",
+      "createdAt": "2021-12-07T02:36:22.000Z",
+      "stripePlan": "Basic",
+      "stripePlanEffective": "Basic",
+      "stripeCustomerId": "cus_KjMGIDyVIdoUhR",
+      "stripePeriodEnd": "2022-08-07T02:36:21.000Z",
+      "featureUsage": {
+        "snooze": {
+          "quota": 15,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "send-later": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "thread-sharing": {
+          "quota": 3,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "link-tracking": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 4,
+          "featureLimitName": "basic-limit"
+        },
+        "open-tracking": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 4,
+          "featureLimitName": "basic-limit"
+        },
+        "contact-profiles": {
+          "quota": 3,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "send-reminders": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "translation": {
+          "quota": 50,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        }
+      }
+    },
+    "accounts": [
+      {
+        "id": "59ca86cf",
+        "metadata": [],
+        "name": "Gabriel Carneiro",
+        "provider": "imap",
+        "emailAddress": "gabriel.mlc@grad.ufsc.br",
+        "settings": {
+          "imap_host": "imap.ufsc.br",
+          "imap_port": 993,
+          "imap_username": "gabriel.mlc@grad.ufsc.br",
+          "imap_security": "SSL / TLS",
+          "imap_allow_insecure_ssl": false,
+          "smtp_host": "smtp.ufsc.br",
+          "smtp_port": 465,
+          "smtp_username": "gabriel.mlc@grad.ufsc.br",
+          "smtp_security": "SSL / TLS",
+          "smtp_allow_insecure_ssl": false,
+          "container_folder": ""
+        },
+        "label": "gabriel.mlc@grad.ufsc.br",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "authedAt": 1654635944.368,
+        "color": "",
+        "__cls": "Account"
+      },
+      {
+        "id": "549a37b7",
+        "metadata": [],
+        "name": "Gabriel Carneiro",
+        "provider": "gmail",
+        "emailAddress": "carneiro.gabr@gmail.com",
+        "settings": {
+          "imap_host": "imap.gmail.com",
+          "imap_port": 993,
+          "imap_username": "carneiro.gabr@gmail.com",
+          "imap_security": "SSL / TLS",
+          "imap_allow_insecure_ssl": false,
+          "smtp_host": "smtp.gmail.com",
+          "smtp_port": 587,
+          "smtp_username": "carneiro.gabr@gmail.com",
+          "smtp_security": "STARTTLS",
+          "smtp_allow_insecure_ssl": false,
+          "container_folder": "",
+          "refresh_client_id": "662287800555-0a5h4ii0e9hsbpq0mqtul7fja0jhf9uf.apps.googleusercontent.com"
+        },
+        "label": "carneiro.gabr@gmail.com",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "syncError": null,
+        "authedAt": 1645533088.476,
+        "color": "",
+        "__cls": "Account"
+      },
+      {
+        "id": "e5adbb3d",
+        "metadata": [],
+        "name": "Gabriel Carneiro",
+        "provider": "gmail",
+        "emailAddress": "gabrielmedeiros1708@gmail.com",
+        "settings": {
+          "imap_host": "imap.gmail.com",
+          "imap_port": 993,
+          "imap_username": "gabrielmedeiros1708@gmail.com",
+          "imap_security": "SSL / TLS",
+          "imap_allow_insecure_ssl": false,
+          "smtp_host": "smtp.gmail.com",
+          "smtp_port": 587,
+          "smtp_username": "gabrielmedeiros1708@gmail.com",
+          "smtp_security": "STARTTLS",
+          "smtp_allow_insecure_ssl": false,
+          "container_folder": "",
+          "refresh_client_id": "662287800555-0a5h4ii0e9hsbpq0mqtul7fja0jhf9uf.apps.googleusercontent.com"
+        },
+        "label": "gabrielmedeiros1708@gmail.com",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "syncError": null,
+        "authedAt": 1645533297.39,
+        "color": "",
+        "__cls": "Account"
+      },
+      {
+        "id": "c75691aa",
+        "metadata": [],
+        "name": "Gabriel Carneiro",
+        "provider": "imap",
+        "emailAddress": "qubox.cfm@contato.ufsc.br",
+        "settings": {
+          "imap_host": "imap.ufsc.br",
+          "imap_port": 993,
+          "imap_username": "qubox.cfm@contato.ufsc.br",
+          "imap_security": "SSL / TLS",
+          "imap_allow_insecure_ssl": false,
+          "smtp_host": "smtp.ufsc.br",
+          "smtp_port": 465,
+          "smtp_username": "qubox.cfm@contato.ufsc.br",
+          "smtp_security": "SSL / TLS",
+          "smtp_allow_insecure_ssl": false,
+          "container_folder": ""
+        },
+        "label": "qubox.cfm@contato.ufsc.br",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "syncError": null,
+        "authedAt": 1649167938.371,
+        "color": "",
+        "__cls": "Account"
+      }
+    ],
+    "accountsVersion": 40,
+    "containerFolderDefault": "",
+    "mailto": {
+      "prompted-about-default": true
+    },
+    "signatures": {
+      "initial": {
+        "title": "with git",
+        "id": "initial",
+        "body": "<!DOCTYPE html>\n<html lang=\"en\" style=\"display: block;\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n    <style>\nlink {\n  display: none;\n}\ninput:enabled:read-write:-webkit-any(:focus,\n:hover)::-webkit-clear-button {\n  opacity: 1;\n  pointer-events: auto;\n}\ninput[type=\"search\" i]:enabled:read-write:-webkit-any(:focus,\n:hover)::-webkit-search-cancel-button {\n  opacity: 1;\n  pointer-events: auto;\n}\ninput:enabled:read-write:-webkit-any(:focus,\n:hover)::-webkit-inner-spin-button {\n  opacity: 1;\n  pointer-events: auto;\n}\ninput[type=\"button\" i]:active,\ninput[type=\"submit\" i]:active,\ninput[type=\"reset\" i]:active,\ninput[type=\"file\" i]:active::-webkit-file-upload-button,\nbutton:active {\n  border-style: inset;\n}\ninput[type=\"button\" i]:active:disabled,\ninput[type=\"submit\" i]:active:disabled,\ninput[type=\"reset\" i]:active:disabled,\ninput[type=\"file\" i]:active:disabled::-webkit-file-upload-button,\nbutton:active:disabled {\n  border-style: outset;\n}\noption:-internal-spatial-navigation-focus {\n  outline: black dashed 1px;\n  outline-offset: -1px;\n}\ninput::-webkit-calendar-picker-indicator:hover {\n  background-color: #eee;\n}\ninput:enabled:read-write:-webkit-any(:focus,\n:hover)::-webkit-calendar-picker-indicator,\ninput::-webkit-calendar-picker-indicator:focus {\n  opacity: 1;\n  pointer-events: auto;\n}\nselect:-internal-list-box:focus option:checked {\n  background-color: -internal-active-list-box-selection !important;\n  color: -internal-active-list-box-selection-text !important;\n}\n:focus {\n  outline: auto 5px -webkit-focus-ring-color;\n}\nhtml:focus,\nbody:focus,\ninput[readonly]:focus {\n  outline: none;\n}\napplet:focus,\nembed:focus,\niframe:focus,\nobject:focus {\n  outline: none;\n}\ninput:focus,\ntextarea:focus,\nkeygen:focus,\nselect:focus {\n  outline-offset: -2px;\n}\ninput[type=\"button\" i]:focus,\ninput[type=\"checkbox\" i]:focus,\ninput[type=\"file\" i]:focus,\ninput[type=\"hidden\" i]:focus,\ninput[type=\"image\" i]:focus,\ninput[type=\"radio\" i]:focus,\ninput[type=\"reset\" i]:focus,\ninput[type=\"search\" i]:focus,\ninput[type=\"submit\" i]:focus,\ninput[type=\"file\" i]:focus::-webkit-file-upload-button {\n  outline-offset: 0;\n}\na:-webkit-any-link {\n  color: -webkit-link;\n  text-decoration: underline;\n  cursor: auto;\n}\na:-webkit-any-link:active {\n  color: -webkit-activelink;\n}\n@media print {\n  * {\n    -webkit-columns: auto !important;\n  }\n}\n</style>\n</head>\n<body style=\"display: block; margin: 8px;\">\n<table cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse: separate; border-color: gray;\">\n    <tbody style=\"display: table-row-group; vertical-align: middle; border-color: inherit;\" valign=\"middle\">\n    <tr style=\"display: table-row; vertical-align: inherit; border-color: inherit;\" valign=\"inherit\">\n        <td style=\"display: table-cell; vertical-align: top; width: 1px;\" width=\"1\" valign=\"top\"></td>\n        <td style=\"display: table-cell; vertical-align: inherit;\" valign=\"inherit\">\n            <div style=\"display: block;\">\n                <strong style=\"font-weight: bold;\"> Gabriel Carneiro </strong>\n            </div>\n            <div style=\"display: block;\">Informações de Contato</div>\n        </td>\n    </tr>\n    <tr style=\"display: table-row; vertical-align: inherit; border-color: inherit;\" valign=\"inherit\">\n        <td colspan=\"2\" style=\"display: table-cell; vertical-align: inherit;\" valign=\"inherit\">\n            <div style=\"display: block; font-size: 0.9em; border-top: 1px dashed gray; min-width: 200px; max-width: 400px; margin-top: 10px; padding-top: 4px;\">\n                <div style=\"display: block;\">\n                    <a style=\"margin-right: 8px\" href=\"mailto:gabriel.mlc@grad.ufsc.br\">\n                        gabriel.mlc@grad.ufsc.br\n                    </a>\n                </div>\n                <div style=\"display: flex; flex-direction: row;\">\n                    <div style=\"display: block;\">\n                        <a href=\"https://www.linkedin.com/in/gabriel-carneiro-86413521b/\" title=\"LinkedIn\" class=\"wrap\" style=\"width: 300px; height: 00px; margin-bottom: 10px;\">\n                            <img src=\"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg\" class=\"svg\" alt=\"LinkedIn\" style=\"width: 20px; height: 20px; margin-right: 5px;\" width=\"20\" height=\"20\">\n                        </a>\n                    </div>\n                    <div class=\"container\" style=\"display: block; width: 18px; height: 18px; border-radius: 50%; position: relative; background-color: white;\">\n                        <a href=\"https://github.com/G-Carneiro\" class=\"wrap\" style=\"width: 300px; height: 00px; margin-bottom: 10px;\">\n                            <img src=\"https://raw.githubusercontent.com/detain/svg-logos/master/svg/github-1.svg\" alt=\"GitHub\" class=\"svg\" style=\"width: 20px; height: 20px; margin-right: 5px; bottom: 0; position: absolute; left: -1px;\" width=\"20\" height=\"20\">\n                        </a>\n                    </div>\n                </div>\n            </div>\n        </td>\n    </tr>\n    </tbody>\n</table>\n</body></html>",
+        "data": {
+          "title": "Informações de Contato",
+          "name": "Gabriel Carneiro",
+          "email": "gabriel.mlc@grad.ufsc.br",
+          "websiteURL": "https://github.com/G-Carneiro",
+          "linkedinURL": "https://www.linkedin.com/in/gabriel-carneiro-86413521b/",
+          "phone": "",
+          "tintColor": "",
+          "photoURL": "",
+          "address": "",
+          "facebookURL": "",
+          "twitterHandle": "",
+          "fax": "",
+          "instagramURL": ""
+        }
+      }
+    },
+    "plugins": {
+      "open-tracking": {
+        "defaultOn": true
+      }
+    }
+  }
+}
