@@ -83,8 +83,8 @@ def final_message() -> None:
     return None
 
 
-def create_symlinks(symlinks: List[Symlink]) -> None:
-    for symlink in symlinks:
+def create_symlinks(symlinks: Dict[str, Symlink]) -> None:
+    for _, symlink in symlinks.items():
         system(f"rm {symlink.destiny()} \n"
                f"ln -s {symlink.origin()} {symlink.destiny()}")
         print(f"[Linked] - {symlink.name()}")
