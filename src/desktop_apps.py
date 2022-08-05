@@ -1,5 +1,7 @@
 from typing import Dict, List
 
+from .Symlink import Symlink
+from .global_variables import *
 # TODO: check steamcmd
 # TODO: find multiseat solution (like aster for windows https://www.asterpro.com.br/)
 # TODO: find solution to gamepad
@@ -45,15 +47,27 @@ def _update_remove_apt_packages(remove_apt_packages: List[str]) -> None:
     return None
 
 
+def _update_symlinks(symlinks: Dict[str, Symlink]) -> None:
+    symlinks.update({
+        "discord": Symlink(name="discord", origin=f"{DESKTOP_CONFIG}", destiny=f"{CONFIG}", file="settings.json"),
+        "gtk-3.0": Symlink(name="gtk-3.0", origin=f"{DESKTOP_CONFIG}", destiny=f"{CONFIG}", file="bookmarks"),
+        "transmission": Symlink(name="transmission", origin=f"{DESKTOP_CONFIG}", destiny=f"{CONFIG}",
+                                file="settings.json"),
+        "whatsapp": Symlink(name="whatsapp", origin=f"{DESKTOP_CONFIG}", destiny=f"{VAR_APP}", file="config.json")
+    })
+
+
 def update_all_packages(ppas: List[str],
                         deb: Dict[str, str],
                         apt_packages: List[str],
                         remove_apt_packages: List[str],
-                        flatpak_packages: Dict[str, str]
+                        flatpak_packages: Dict[str, str],
+                        symlinks: Dict[str, Symlink]
                         ) -> None:
     _update_deb(deb=deb)
     _update_ppas(ppas=ppas)
     _update_apt(apt_packages=apt_packages)
     _update_flatpak_packages(flatpak_packages=flatpak_packages)
     _update_remove_apt_packages(remove_apt_packages=remove_apt_packages)
+    _update_symlinks(symlinks=symlinks)
     return None

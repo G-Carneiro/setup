@@ -1,6 +1,7 @@
 from typing import List, Dict
 
-from .functions import PYTHON_VERSION
+from .Symlink import Symlink
+from .global_variables import *
 
 # Manually install
 # bitwarden   https://bitwarden.com/download/
@@ -63,3 +64,12 @@ remove_apt_packages: List[str] = [
     "sticky",                   # notes
     "thunderbird"               # email manager
 ]
+
+symlinks: Dict[str, Symlink] = {
+    "discord": Symlink(name="discord", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="settings.json"),
+    "gitconfig": Symlink(name="gitconfig", origin=f"{NOTE_CONFIG}", destiny=f"{HOME}", file=".gitconfig"),
+    "Mailspring": Symlink(name="Mailspring", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="keymap.json"),
+    "telegram": Symlink(name="telegram", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="shortcuts-custom.json"),
+    "whatsapp": Symlink(name="whatsapp", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="config.json")
+}
+

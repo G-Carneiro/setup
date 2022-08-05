@@ -85,7 +85,8 @@ def final_message() -> None:
 
 def create_symlinks(symlinks: List[Symlink]) -> None:
     for symlink in symlinks:
-        system(f"ln -s {symlink.origin()} {symlink.destiny()}")
+        system(f"rm {symlink.destiny()} \n"
+               f"ln -s {symlink.origin()} {symlink.destiny()}")
         print(f"[Linked] - {symlink.name()}")
 
     return None
