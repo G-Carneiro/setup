@@ -90,3 +90,18 @@ def create_symlinks(symlinks: Dict[str, Symlink]) -> None:
         print(f"[Linked] - {symlink.name()}")
 
     return None
+
+
+def install_orico_adapter() -> None:
+    # https://plus.diolinux.com.br/t/review-adaptador-bluetooth-orico-bta-508-no-linux/35393
+    # https://www.xmpow.com/pages/download
+    # buscar por "BH456A"
+    driver_link: str = "https://mpow.s3-us-west-1.amazonaws.com/20201202_mpow_BH456A_driver+for+Linux.7z"
+    system(f"wget -c {driver_link} -P {DOWNLOADS} \n"
+           f"7z x 20201202_mpow_BH456A_driver+for+Linux.7z \n"
+           f"sudo cp -iv {DOWNLOADS}/20201202_LINUX_BT_DRIVER/rtkbt-firmware/lib/firmware/rtlbt/rtl8761b_fw "
+           f"/lib/firmware/rtl_bt/rtl8761b_fw.bin \n"
+           f"sudo cp -iv {DOWNLOADS}/20201202_LINUX_BT_DRIVER/rtkbt-firmware/lib/firmware/rtlbt/rtl8761b_config "
+           f"/lib/firmware/rtl_bt/rtl8761b_config.bin"
+           )
+    return None
