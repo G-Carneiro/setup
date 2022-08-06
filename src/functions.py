@@ -105,3 +105,8 @@ def install_orico_adapter() -> None:
            f"/lib/firmware/rtl_bt/rtl8761b_config.bin"
            )
     return None
+
+
+def change_icon_dir(target_dir: str, icon_file: str) -> None:
+    system(f"gio set -t string {target_dir} metadata::custom-icon file://{icon_file}")
+    return None

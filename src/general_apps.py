@@ -75,3 +75,6 @@ symlinks: Dict[str, Symlink] = {
     "whatsapp": Symlink(name="whatsapp", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="config.json")
 }
 
+icons: Dict[str, str] = {
+    f"{GIT}": f"{IMG}/folder-github.svg"
+}

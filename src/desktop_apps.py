@@ -57,6 +57,14 @@ def _update_symlinks(symlinks: Dict[str, Symlink]) -> None:
     })
 
 
+def _update_icons(icons: Dict[str, str]) -> None:
+    icons.update({
+        f"{ANIMES}": f"{IMG}/crunchyroll.svg",
+        f"{CCO}": f"{IMG}/monitor.png",
+    })
+    return None
+
+
 def update_all_packages(ppas: List[str],
                         deb: Dict[str, str],
                         apt_packages: List[str],
