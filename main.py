@@ -5,7 +5,7 @@ from src.functions import *
 from src.general_apps import *
 
 if __name__ == "__main__":
-    exit(0)
+    # exit(0)
     try:
         is_desktop: bool = bool(argv[1])
     except IndexError:
