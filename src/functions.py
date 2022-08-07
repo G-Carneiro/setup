@@ -111,3 +111,24 @@ def change_icon_dir(icons: Dict[str, str]) -> None:
     for target, icon in icons.items():
         system(f"gio set -t string '{target}' metadata::custom-icon 'file://{icon}'")
     return None
+
+
+def copy_file(copy_files: Dict[str, Symlink]) -> None:
+    for _, value in copy_files.items():
+        system(f"cp {value.origin()} {value.destiny()} \n"
+               f"chmod 400 {value.destiny()}")
+        print(f"[Copied] - {value.name()}")
+    return None
+
+
+def pip() -> None:
+    system("pip install --upgrade pip \n"
+           "pip install jupyter")
+    return None
+
+
+def make_directories(mkdir: List[str]) -> None:
+    for dir_ in mkdir:
+        system(f"mkdir {dir_}")
+        print(f"[Created] - {dir_}")
+    return None

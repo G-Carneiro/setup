@@ -54,7 +54,10 @@ def _update_symlinks(symlinks: Dict[str, Symlink]) -> None:
     symlinks.update({
         "gtk-3.0": Symlink(name="gtk-3.0", origin=f"{DESKTOP_CONFIG}", destiny=f"{CONFIG}", file="bookmarks"),
         "transmission": Symlink(name="transmission", origin=f"{DESKTOP_CONFIG}", destiny=f"{CONFIG}",
-                                file="settings.json")
+                                file="settings.json"),
+        "animes": Symlink(name="Animes", origin=f"{MNT}", destiny=f"{HOME}", file="Animes"),
+        "cco": Symlink(name="Others", origin=f"{MNT}", destiny=f"{HOME}", file="CCO"),
+        "series": Symlink(name="Others", origin=f"{MNT}", destiny=f"{HOME}", file="Series")
     })
     return None
 
@@ -85,13 +88,19 @@ def _update_icons(icons: Dict[str, str], icons_dir: str = f"{ICONS}",
     return None
 
 
+def _update_mkdir(mkdir: List[str]) -> None:
+    mkdir += []
+    return None
+
+
 def update_all_packages(ppas: List[str],
                         deb: Dict[str, str],
                         apt_packages: List[str],
                         remove_apt_packages: List[str],
                         flatpak_packages: Dict[str, str],
                         symlinks: Dict[str, Symlink],
-                        icons: Dict[str, str]
+                        icons: Dict[str, str],
+                        mkdir: List[str]
                         ) -> None:
     _update_deb(deb=deb)
     _update_ppas(ppas=ppas)
@@ -100,4 +109,5 @@ def update_all_packages(ppas: List[str],
     _update_remove_apt_packages(remove_apt_packages=remove_apt_packages)
     _update_symlinks(symlinks=symlinks)
     _update_icons(icons=icons)
+    _update_mkdir(mkdir=mkdir)
     return None

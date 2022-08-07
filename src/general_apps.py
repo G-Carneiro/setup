@@ -83,3 +83,10 @@ copy_files: Dict[str, Symlink] = {
 icons: Dict[str, str] = {
     f"{GIT}": f"{ICONS}/folder-github.svg"
 }
+
+mkdir: List[str] = [
+    GIT,
+    APPS_DIRECTORY,
+    APPIMAGE_DIRECTORY,
+    DEB_DIRECTORY
+]

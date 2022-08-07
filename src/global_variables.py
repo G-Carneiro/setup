@@ -5,6 +5,7 @@ PYTHON_VERSION: str = f"python3.9"
 HOME: str = expanduser("~")
 GIT: str = f"{HOME}/Git"
 VAR: str = f"{HOME}/.var"
+MNT: str = f"/mnt"
 VAR_APP: str = f"{VAR}/app"
 THIS: str = f"{dirname(abspath('__main__'))}"
 DOTFILES: str = f"{THIS}/dotfiles"
