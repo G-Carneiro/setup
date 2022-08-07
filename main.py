@@ -25,6 +25,7 @@ if __name__ == "__main__":
     add_apt_repository(programs=ppas)
     apt_update()
     install_apt(programs=apt_packages)
+    apt_update()
     install_deb(programs=deb_to_url)
     apt_update()
     install_flatpaks(programs=flatpak_packages)
