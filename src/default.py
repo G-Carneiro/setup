@@ -68,17 +68,18 @@ remove_apt_packages: List[str] = [
 ]
 
 symlinks: Dict[str, Symlink] = {
-    "gitconfig": Symlink(name="gitconfig", origin=f"{NOTE_CONFIG}", destiny=f"{HOME}", file=".gitconfig"),
-    "Mailspring-key": Symlink(name="Mailspring", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="keymap.json"),
-    "Mailspring-conf": Symlink(name="Mailspring", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="config.json"),
-    "Mailspring-pref": Symlink(name="Mailspring", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="Preferences"),
-    "telegram": Symlink(name="telegram", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="shortcuts-custom.json"),
-    "whatsapp-pref": Symlink(name="whatsapp", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="Preferences")
+    "gitconfig": Symlink(name="gitconfig", origin=f"{DEFAULT_CONFIG}", destiny=f"{HOME}", file=".gitconfig"),
+    "Mailspring-key": Symlink(name="Mailspring", origin=f"{DEFAULT_CONFIG}", destiny=f"{CONFIG}", file="keymap.json"),
+    "Mailspring-conf": Symlink(name="Mailspring", origin=f"{DEFAULT_CONFIG}", destiny=f"{CONFIG}", file="config.json"),
+    "Mailspring-pref": Symlink(name="Mailspring", origin=f"{DEFAULT_CONFIG}", destiny=f"{CONFIG}", file="Preferences"),
+    "telegram": Symlink(name="telegram", origin=f"{DEFAULT_CONFIG}", destiny=f"{VAR_APP}",
+                        file="shortcuts-custom.json"),
+    "whatsapp-pref": Symlink(name="whatsapp", origin=f"{DEFAULT_CONFIG}", destiny=f"{VAR_APP}", file="Preferences")
 }
 
 copy_files: Dict[str, Symlink] = {
-    "discord": Symlink(name="discord", origin=f"{NOTE_CONFIG}", destiny=f"{CONFIG}", file="settings.json"),
-    "whatsapp-conf": Symlink(name="whatsapp", origin=f"{NOTE_CONFIG}", destiny=f"{VAR_APP}", file="config.json")
+    "discord": Symlink(name="discord", origin=f"{DEFAULT_CONFIG}", destiny=f"{CONFIG}", file="settings.json"),
+    "whatsapp-conf": Symlink(name="whatsapp", origin=f"{DEFAULT_CONFIG}", destiny=f"{VAR_APP}", file="config.json")
 }
 
 icons: Dict[str, str] = {
