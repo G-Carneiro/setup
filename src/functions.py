@@ -1,7 +1,6 @@
 from os import system
 from typing import List, Dict
 
-
 # TODO: bookmarks, mount disks (/etc/fstab), change directories icons, mkdir
 from .Symlink import Symlink
 from .global_variables import *
@@ -122,8 +121,8 @@ def copy_file(copy_files: Dict[str, Symlink]) -> None:
 
 
 def pip() -> None:
-    system("pip install --upgrade pip \n"
-           "pip install jupyter")
+    system("cd ~/ && pip install --upgrade pip \n"
+           "cd ~/ && pip install jupyter")
     return None
 
 
