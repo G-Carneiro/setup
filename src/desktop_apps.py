@@ -74,7 +74,7 @@ def _update_icons(icons: Dict[str, str], icons_dir: str = f"{ICONS}",
         for target_file in scandir(target_dir):
             target_name: str = target_file.name
             if target_file.is_dir() \
-                    and (archive_name.lower().replace("_", "-")[:-4] in target_name.lower().replace("_", "-")):
+                    and (archive_name.lower().replace(" ", "-")[:-4] in target_name.lower().replace(" ", "-")):
                 if archive.is_file():
                     target_path = target_file.path
                     archive_path = archive.path

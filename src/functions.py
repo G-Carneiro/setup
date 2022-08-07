@@ -109,5 +109,5 @@ def install_orico_adapter() -> None:
 
 def change_icon_dir(icons: Dict[str, str]) -> None:
     for target, icon in icons.items():
-        system(f"gio set -t string {target} metadata::custom-icon file://{icon}")
+        system(f"gio set -t string '{target}' metadata::custom-icon 'file://{icon}'")
     return None
