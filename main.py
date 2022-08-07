@@ -5,7 +5,7 @@ from src.functions import *
 from src.general_apps import *
 
 if __name__ == "__main__":
-    # exit(0)
+    exit(0)
     try:
         is_desktop: bool = bool(argv[1])
     except IndexError:
@@ -16,7 +16,7 @@ if __name__ == "__main__":
                             apt_packages=apt_packages,
                             remove_apt_packages=remove_apt_packages,
                             flatpak_packages=flatpak_packages,
-                            symlinks=symlinks)
+                            symlinks=symlinks, icons=icons)
 
     # install_brave()
     # install_anydesk()

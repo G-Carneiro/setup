@@ -1,8 +1,8 @@
-from os.path import dirname, abspath
+from os.path import dirname, abspath, expanduser
 
 
 PYTHON_VERSION: str = f"python3.9"
-HOME: str = "$HOME"
+HOME: str = expanduser("~")
 GIT: str = f"{HOME}/Git"
 VAR: str = f"{HOME}/.var"
 VAR_APP: str = f"{VAR}/app"
@@ -18,5 +18,5 @@ DEB_DIRECTORY: str = f"{APPS_DIRECTORY}/AppImage"
 PCLOUD: str = f"{HOME}/pCloudDrive"
 IMG: str = f"{THIS}/img"
 ANIMES: str = f"{HOME}/Animes"
-ANIMES_ICON: str = f"{PCLOUD}/Animes_Png"
+ICONS: str = f"{PCLOUD}/Icons"
 CCO: str = f"{HOME}/CCO"

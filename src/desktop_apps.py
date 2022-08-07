@@ -1,7 +1,10 @@
+from os import scandir
 from typing import Dict, List
 
 from .Symlink import Symlink
 from .global_variables import *
+
+
 # TODO: check steamcmd
 # TODO: find multiseat solution (like aster for windows https://www.asterpro.com.br/)
 # TODO: find solution to gamepad
@@ -64,60 +67,21 @@ def _update_copy_files(copy_files: Dict[str, Symlink]) -> None:
     return None
 
 
-def _update_icons(icons: Dict[str, str]) -> None:
-    icons.update({
-        f"{ANIMES}": f"{IMG}/crunchyroll.svg",
-        f"{ANIMES}/One\\ Piece": f"{ANIMES_ICON}/one-piece.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 1\\ East\\ Blue":
-            f"{ANIMES_ICON}/One_Piece/arlong.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 2\\ Baroque\\ Works":
-            f"{ANIMES_ICON}/One_Piece/baroque-works.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 3\\ Skypiea":
-            f"{ANIMES_ICON}/One_Piece/enel.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 4\\ Water\\ 7\\ ~\\ CP9":
-            f"{ANIMES_ICON}/One_Piece/world-government.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 5\\ Thriller\\ Bark":
-            f"{ANIMES_ICON}/One_Piece/thriller-bark.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 6\\ Arquipélago\\ Sabaody":
-            f"{ANIMES_ICON}/One_Piece/kuja-pirates.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 7\\ Impel\\ Down":
-            f"{ANIMES_ICON}/One_Piece/spade-pirates.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 8\\ Marineford":
-            f"{ANIMES_ICON}/One_Piece/whitebeard.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 9\\ Pós\\ Guerra":
-            f"{ANIMES_ICON}/One_Piece/straw-hat.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 10\\ Ilha\\ dos\\ Tritões":
-            f"{ANIMES_ICON}/One_Piece/sun-pirates.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 11\\ Punk\\ Hazard":
-            f"{ANIMES_ICON}/One_Piece/heart-pirates.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 12\\ Dressrosa":
-            f"{ANIMES_ICON}/One_Piece/doflamingo.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 13\\ Zou":
-            f"{ANIMES_ICON}/One_Piece/zunesha.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 14\\ Whole\\ Cake":
-            f"{ANIMES_ICON}/One_Piece/big-mom.png",
-        f"{ANIMES}/One\\ Piece/One\\ Piece\\ EX\\ -\\ 15\\ Wano":
-            f"{ANIMES_ICON}/One_Piece/kaido.png",
-        f"{ANIMES}/Alderamin\\ on\\ The\\ Sky":
-            f"{ANIMES_ICON}/alderamin-on-the-sky.png",
-        f"{ANIMES}/Go-toubun":
-            f"{ANIMES_ICON}/go-toubun.png",
-        f"{ANIMES}/Haikyuu":
-            f"{ANIMES_ICON}/haikyuu.png",
-        f"{ANIMES}/Jujutsu\\ Kaisen":
-            f"{ANIMES_ICON}/jujutsu-kaisen.png",
-        f"{ANIMES}/Kimetsu\\ no\\ Yaiba":
-            f"{ANIMES_ICON}/kimetsu.png",
-        f"{ANIMES}/Kimi\\ no\\ Uso":
-            f"{ANIMES_ICON}/kimi-no-uso.png",
-        f"{ANIMES}/One\\ Punch\\ Man":
-            f"{ANIMES_ICON}/one-punch-man.png",
-        f"{ANIMES}/ReZero":
-            f"{ANIMES_ICON}/rezero.png",
-        f"{ANIMES}/Sword\\ Art\\ Online":
-            f"{ANIMES_ICON}/sao.png",
-        f"{CCO}": f"{IMG}/monitor.png",
-    })
+def _update_icons(icons: Dict[str, str], icons_dir: str = f"{ICONS}",
+                  target_dir: str = f"{HOME}") -> None:
+    for archive in scandir(icons_dir):
+        archive_name: str = archive.name
+        for target_file in scandir(target_dir):
+            target_name: str = target_file.name
+            if target_file.is_dir() \
+                    and (archive_name.lower().replace("_", "-")[:-4] in target_name.lower().replace("_", "-")):
+                if archive.is_file():
+                    target_path = target_file.path
+                    archive_path = archive.path
+                    icons[target_path] = archive_path
+                else:
+                    _update_icons(icons=icons, icons_dir=archive.path, target_dir=target_file.path)
+                break
     return None
 
 
@@ -126,7 +90,8 @@ def update_all_packages(ppas: List[str],
                         apt_packages: List[str],
                         remove_apt_packages: List[str],
                         flatpak_packages: Dict[str, str],
-                        symlinks: Dict[str, Symlink]
+                        symlinks: Dict[str, Symlink],
+                        icons: Dict[str, str]
                         ) -> None:
     _update_deb(deb=deb)
     _update_ppas(ppas=ppas)
@@ -134,4 +99,5 @@ def update_all_packages(ppas: List[str],
     _update_flatpak_packages(flatpak_packages=flatpak_packages)
     _update_remove_apt_packages(remove_apt_packages=remove_apt_packages)
     _update_symlinks(symlinks=symlinks)
+    _update_icons(icons=icons)
     return None

@@ -81,5 +81,5 @@ copy_files: Dict[str, Symlink] = {
 }
 
 icons: Dict[str, str] = {
-    f"{GIT}": f"{IMG}/folder-github.svg"
+    f"{GIT}": f"{ICONS}/folder-github.svg"
 }
