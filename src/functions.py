@@ -121,8 +121,7 @@ def copy_file(copy_files: Dict[str, Symlink]) -> None:
 
 
 def pip() -> None:
-    system("cd ~/ && pip install --upgrade pip \n"
-           "cd ~/ && pip install jupyter")
+    system("pip install --upgrade pip")
     return None
 
 
