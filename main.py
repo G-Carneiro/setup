@@ -1,11 +1,10 @@
 from sys import argv
 
-from src.desktop_apps import update_all_packages
+from src.default import *
+from src.desktop import update_all_packages
 from src.functions import *
-from src.general_apps import *
 
 if __name__ == "__main__":
-    # exit(0)
     try:
         is_desktop: bool = bool(argv[1])
     except IndexError:
@@ -18,8 +17,8 @@ if __name__ == "__main__":
                             flatpak_packages=flatpak_packages,
                             symlinks=symlinks, icons=icons, mkdir=mkdir)
 
-    # install_brave()
-    # install_anydesk()
+    install_brave()
+    install_anydesk()
     make_directories(mkdir=mkdir)
     apt_update()
     add_apt_repository(programs=ppas)
@@ -34,4 +33,5 @@ if __name__ == "__main__":
     pip()
     create_symlinks(symlinks=symlinks)
     copy_file(copy_files=copy_files)
+    change_icon_dir(icons=icons)
     final_message()

@@ -1,7 +1,6 @@
 from os import system
 from typing import List, Dict
 
-# TODO: bookmarks, mount disks (/etc/fstab), change directories icons, mkdir
 from .Symlink import Symlink
 from .global_variables import *
 

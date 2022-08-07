@@ -15,6 +15,7 @@ from .global_variables import *
 # TODO: install pympress by default or not? https://github.com/Cimbali/pympress/
 # TODO: OnionShare or RetroShare?
 # TODO: fdm or chrono?
+# TODO: .config/mimeapps.list
 
 ppas: List[str] = []
 

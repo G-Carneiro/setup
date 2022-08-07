@@ -5,6 +5,7 @@ from .Symlink import Symlink
 from .global_variables import *
 
 
+# TODO: mount disks (/etc/fstab)
 # TODO: check steamcmd
 # TODO: find multiseat solution (like aster for windows https://www.asterpro.com.br/)
 # TODO: find solution to gamepad
