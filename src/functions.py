@@ -7,7 +7,7 @@ from .global_variables import *
 
 def add_apt_repository(programs: List[str]) -> None:
     for program in programs:
-        system(f"sudo add-apt-repository ppa:{program} \n"
+        system(f"sudo add-apt-repository ppa:{program} -y \n"
                f"echo [Added] - {program}")
 
     return None
