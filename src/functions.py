@@ -133,6 +133,6 @@ def make_directories(mkdir: List[str]) -> None:
 
 def apply_dconf(dconf: Dict[str, str]) -> None:
     for key, value in dconf.items():
-        system(f"dconf dump {key} < {value}")
+        system(f"dconf load {key} < {value}")
         print(f"[Config] - {key}")
     return None
