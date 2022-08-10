@@ -67,7 +67,7 @@ def install_brave() -> None:
     signed: str = "[signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64]"
     system(f"sudo apt install apt-transport-https curl -y \n"
            f"sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg {keyring_link} \n"
-           f"echo deb {signed} {link} stable main | sudo tee /etc/apt/sources.list.d/brave-browser-release.list")
+           f"echo 'deb {signed} {link} stable main'|sudo tee /etc/apt/sources.list.d/brave-browser-release.list")
     return None
 
 
