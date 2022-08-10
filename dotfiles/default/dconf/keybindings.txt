@@ -1,0 +1,14 @@
+[/]
+custom-list=['__dummy__', 'custom0']
+looking-glass-keybinding=@as []
+
+[custom-keybindings/custom0]
+binding=['Print']
+command='flatpak run org.flameshot.Flameshot gui'
+name='flameshot'
+
+[media-keys]
+screenshot=@as []
+shutdown=['<Control><Alt>End', 'XF86PowerOff', 'Pause']
+suspend=['XF86Sleep', '<Super>l']
+terminal=['<Super>t']
