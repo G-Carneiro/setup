@@ -94,6 +94,11 @@ def _update_mkdir(mkdir: List[str]) -> None:
     return None
 
 
+def _update_dconf(dconf: Dict[str, str]) -> None:
+    dconf.update({})
+    return None
+
+
 def update_all_packages(ppas: List[str],
                         deb: Dict[str, str],
                         apt_packages: List[str],
@@ -101,7 +106,8 @@ def update_all_packages(ppas: List[str],
                         flatpak_packages: Dict[str, str],
                         symlinks: Dict[str, Symlink],
                         icons: Dict[str, str],
-                        mkdir: List[str]
+                        mkdir: List[str],
+                        dconf: Dict[str, str]
                         ) -> None:
     _update_deb(deb=deb)
     _update_ppas(ppas=ppas)
@@ -111,4 +117,5 @@ def update_all_packages(ppas: List[str],
     _update_symlinks(symlinks=symlinks)
     _update_icons(icons=icons)
     _update_mkdir(mkdir=mkdir)
+    _update_dconf(dconf=dconf)
     return None

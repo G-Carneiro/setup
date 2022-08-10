@@ -16,6 +16,7 @@ from .global_variables import *
 # TODO: OnionShare or RetroShare?
 # TODO: fdm or chrono?
 # TODO: .config/mimeapps.list
+# TODO: dconf dump /prg/cinnamon [>|<] file.txt
 
 ppas: List[str] = []
 
@@ -92,3 +93,7 @@ mkdir: List[str] = [
     APPIMAGE_DIRECTORY,
     DEB_DIRECTORY
 ]
+
+dconf: Dict[str, str] = {
+    "/org/cinnamon/desktop/keybindings/": f"{DEFAULT_CONFIG}/dconf/keybindings.txt"
+}
