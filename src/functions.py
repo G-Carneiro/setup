@@ -49,7 +49,8 @@ def install_deb(programs: Dict[str, str]) -> None:
 
 def update_upgrade() -> None:
     system(f"sudo apt update && sudo apt dist-upgrade -y \n"
-           f"flatpak update \n"
+           f"sudo apt --fix-broken install -y \n"
+           f"flatpak update -y \n"
            f"sudo apt autoclean \n"
            f"sudo apt autoremove -y")
     return None
@@ -61,12 +62,12 @@ def apt_update() -> None:
 
 
 def install_brave() -> None:
-    system("sudo apt install apt-transport-https curl -y \n"
-           "sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg "
-           "https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg -y \n"
-           "echo deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] "
-           "https://brave-browser-apt-release.s3.brave.com/ stable main "
-           "| sudo tee /etc/apt/sources.list.d/brave-browser-release.list")
+    link: str = "https://brave-browser-apt-release.s3.brave.com/"
+    keyring_link: str = "https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg"
+    signed: str = "[signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64]"
+    system(f"sudo apt install apt-transport-https curl -y \n"
+           f"sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg {keyring_link} -y \n"
+           f"echo deb {signed} {link} stable main | sudo tee /etc/apt/sources.list.d/brave-browser-release.list")
     return None
 
 
