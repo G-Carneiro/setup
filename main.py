@@ -18,8 +18,8 @@ if __name__ == "__main__":
                             symlinks=symlinks, icons=icons, mkdir=mkdir,
                             dconf=dconf)
 
-    install_brave()
-    install_anydesk()
+    # install_brave()
+    # install_anydesk()
     make_directories(mkdir=mkdir)
     apt_update()
     add_apt_repository(programs=ppas)

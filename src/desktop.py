@@ -39,8 +39,8 @@ def _update_flatpak_packages(flatpak_packages: Dict[str, str]) -> None:
     flatpak_packages.update({
         "AntiMicroX": "io.github.antimicrox.antimicrox",    # official support
         "Citra": "org.citra_emu.citra",                     # official support
-        "Kdenlive": "org.kde.kdenlive",                     # official support
-        "obs-studio": "com.obsproject.Studio",              # official support
+        # "Kdenlive": "org.kde.kdenlive",                     # official support
+        # "obs-studio": "com.obsproject.Studio",              # official support
         "RetroArch": "org.libretro.RetroArch"               # official support
     })
     return None

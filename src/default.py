@@ -28,8 +28,8 @@ deb_to_url: Dict[str, str] = {
 }
 
 apt_packages: List[str] = [
-    "anydesk",
-    "brave-browser",
+    # "anydesk",
+    # "brave-browser",
     "git",
     "gnome-clocks",
     "grub-customizer",
