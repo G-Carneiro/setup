@@ -71,7 +71,6 @@ remove_apt_packages: List[str] = [
 symlinks: Dict[str, Symlink] = {
     "gitconfig": Symlink(name="gitconfig", origin=f"{DEFAULT_CONFIG}", destiny=f"{HOME}", file=".gitconfig"),
     "Mailspring-key": Symlink(name="Mailspring", origin=f"{DEFAULT_CONFIG}", destiny=f"{CONFIG}", file="keymap.json"),
-    "Mailspring-conf": Symlink(name="Mailspring", origin=f"{DEFAULT_CONFIG}", destiny=f"{CONFIG}", file="config.json"),
     "Mailspring-pref": Symlink(name="Mailspring", origin=f"{DEFAULT_CONFIG}", destiny=f"{CONFIG}", file="Preferences"),
     "telegram": Symlink(name="telegram", origin=f"{DEFAULT_CONFIG}", destiny=f"{VAR_APP}",
                         file="shortcuts-custom.json"),
