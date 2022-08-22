@@ -47,6 +47,7 @@ apt_packages: List[str] = [
 
 flatpak_packages: Dict[str, str] = {
     "barrier": "com.github.debauchee.barrier",          # official support
+    "blackbox": "com.raggesilver.BlackBox",             # official support
     "colorway": "io.github.lainsce.Colorway",           # official support
     "emulsion": "io.github.lainsce.Emulsion",           # official support
     "flameshot": "org.flameshot.Flameshot",             # official support
@@ -54,7 +55,7 @@ flatpak_packages: Dict[str, str] = {
     # "neovim": "io.neovim.nvim",                         # official support
     "telegram": "org.telegram.desktop",                 # official support
     "xournalpp": "com.github.xournalpp.xournalpp",      # official support
-    "whatsapp": "io.github.mimbrero.WhatsAppDesktop"    # unofficial support
+    "whatsapp": "io.github.mimbrero.WhatsAppDesktop",   # unofficial support
 }
 
 remove_apt_packages: List[str] = [

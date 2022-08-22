@@ -41,7 +41,8 @@ def _update_flatpak_packages(flatpak_packages: Dict[str, str]) -> None:
         "Citra": "org.citra_emu.citra",                     # official support
         # "Kdenlive": "org.kde.kdenlive",                     # official support
         # "obs-studio": "com.obsproject.Studio",              # official support
-        "RetroArch": "org.libretro.RetroArch"               # official support
+        "RetroArch": "org.libretro.RetroArch",              # official support
+        "UserModeFTP": "eu.ithz.umftpd",                    # official support
     })
     return None
 
