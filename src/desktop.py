@@ -29,7 +29,6 @@ def _update_apt(apt_packages: List[str]) -> None:
     apt_packages += [
         "ckb-next",
         "goverlay",
-        "lutris",
         "steam"
     ]
     return None
@@ -40,6 +39,7 @@ def _update_flatpak_packages(flatpak_packages: Dict[str, str]) -> None:
         "AntiMicroX": "io.github.antimicrox.antimicrox",    # official support
         "Citra": "org.citra_emu.citra",                     # official support
         # "Kdenlive": "org.kde.kdenlive",                     # official support
+        "Lutris": "net.lutris.Lutris",                      # official support
         # "obs-studio": "com.obsproject.Studio",              # official support
         "RetroArch": "org.libretro.RetroArch",              # official support
         "UserModeFTP": "eu.ithz.umftpd",                    # official support
