@@ -39,6 +39,7 @@ apt_packages: List[str] = [
     f"{PYTHON_VERSION}-dbg",
     f"{PYTHON_VERSION}-full",
     "python3-pip",
+    "python3-pygments",
     "python3-tk-dbg",
     "shellcheck",
     "spotify-client",
