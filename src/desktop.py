@@ -9,6 +9,7 @@ from .global_variables import *
 # TODO: check steamcmd
 # TODO: find multiseat solution (like aster for windows https://www.asterpro.com.br/)
 # TODO: find solution to gamepad
+# https://www.edrawsoft.com/edraw-max/
 
 
 def _update_ppas(ppas: List[str]) -> None:
