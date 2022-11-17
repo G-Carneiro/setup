@@ -60,14 +60,12 @@ flatpak_packages: Dict[str, str] = {
 }
 
 remove_apt_packages: List[str] = [
-    "firefox",
-    "firefox-locale-en",
-    "firefox-locale-pt",
-    "hexchat-common",
+    "firefox*",
+    "hexchat*",
     f"idle-{PYTHON_VERSION}",
-    "libreoffice-common",
+    "*libreoffice*",
     "sticky",                   # notes
-    "thunderbird"               # email manager
+    "thunderbird*"              # email manager
 ]
 
 symlinks: Dict[str, Symlink] = {
