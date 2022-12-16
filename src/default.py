@@ -23,7 +23,7 @@ ppas: List[str] = []
 deb_to_url: Dict[str, str] = {
     "discord": "https://discord.com/api/download?platform=linux&format=deb",
     "mailspring": "https://updates.getmailspring.com/download?platform=linuxDeb",
-    "google_chrome": "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
+    # "google_chrome": "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
     "freedownloadmanager": "https://dn3.freedownloadmanager.org/6/latest/freedownloadmanager.deb"
 }
 
