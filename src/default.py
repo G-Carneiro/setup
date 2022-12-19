@@ -51,6 +51,7 @@ flatpak_packages: Dict[str, str] = {
     "flameshot": "org.flameshot.Flameshot",             # official support
     "flatseal": "com.github.tchx84.Flatseal",           # official support
     # "neovim": "io.neovim.nvim",                         # official support
+    "peek": "com.uploadedlobster.peek",                 # official support
     "telegram": "org.telegram.desktop",                 # official support
     "xournalpp": "com.github.xournalpp.xournalpp",      # official support
     "whatsapp": "io.github.mimbrero.WhatsAppDesktop",   # unofficial support
