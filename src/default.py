@@ -79,10 +79,6 @@ copy_files: Dict[str, Symlink] = {
     "whatsapp-conf": Symlink(name="whatsapp", origin=f"{DEFAULT_CONFIG}", destiny=f"{VAR_APP}", file="config.json")
 }
 
-icons: Dict[str, str] = {
-    f"{GIT}": f"{ICONS}/folder-github.svg"
-}
-
 mkdir: List[str] = [
     GIT,
     APPS_DIRECTORY,

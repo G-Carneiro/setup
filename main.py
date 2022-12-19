@@ -15,7 +15,7 @@ if __name__ == "__main__":
                             apt_packages=apt_packages,
                             remove_apt_packages=remove_apt_packages,
                             flatpak_packages=flatpak_packages,
-                            symlinks=symlinks, icons=icons, mkdir=mkdir,
+                            symlinks=symlinks, mkdir=mkdir,
                             dconf=dconf)
 
     # install_brave()
@@ -34,6 +34,6 @@ if __name__ == "__main__":
     pip()
     create_symlinks(symlinks=symlinks)
     copy_file(copy_files=copy_files)
-    change_icon_dir(icons=icons)
+    change_icon_dir()
     apply_dconf(dconf=dconf)
     final_message()

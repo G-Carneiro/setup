@@ -1,4 +1,3 @@
-from os import scandir
 from typing import Dict, List
 
 from .Symlink import Symlink
@@ -72,24 +71,6 @@ def _update_copy_files(copy_files: Dict[str, Symlink]) -> None:
     return None
 
 
-def _update_icons(icons: Dict[str, str], icons_dir: str = f"{ICONS}",
-                  target_dir: str = f"{HOME}") -> None:
-    for archive in scandir(icons_dir):
-        archive_name: str = archive.name
-        for target_file in scandir(target_dir):
-            target_name: str = target_file.name
-            if target_file.is_dir() \
-                    and (archive_name.lower().replace(" ", "-")[:-4] in target_name.lower().replace(" ", "-")):
-                if archive.is_file():
-                    target_path = target_file.path
-                    archive_path = archive.path
-                    icons[target_path] = archive_path
-                else:
-                    _update_icons(icons=icons, icons_dir=archive.path, target_dir=target_file.path)
-                break
-    return None
-
-
 def _update_mkdir(mkdir: List[str]) -> None:
     mkdir += []
     return None
@@ -106,7 +87,6 @@ def update_all_packages(ppas: List[str],
                         remove_apt_packages: List[str],
                         flatpak_packages: Dict[str, str],
                         symlinks: Dict[str, Symlink],
-                        icons: Dict[str, str],
                         mkdir: List[str],
                         dconf: Dict[str, str]
                         ) -> None:
@@ -116,7 +96,6 @@ def update_all_packages(ppas: List[str],
     _update_flatpak_packages(flatpak_packages=flatpak_packages)
     _update_remove_apt_packages(remove_apt_packages=remove_apt_packages)
     _update_symlinks(symlinks=symlinks)
-    _update_icons(icons=icons)
     _update_mkdir(mkdir=mkdir)
     _update_dconf(dconf=dconf)
     return None

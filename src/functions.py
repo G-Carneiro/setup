@@ -1,3 +1,4 @@
+from os import scandir
 from os import system
 from typing import List, Dict
 
@@ -100,9 +101,22 @@ def install_orico_adapter() -> None:
     return None
 
 
-def change_icon_dir(icons: Dict[str, str]) -> None:
-    for target, icon in icons.items():
-        system(f"gio set -t string '{target}' metadata::custom-icon 'file://{icon}'")
+def change_icon_dir(icons_dir: str = f"{ICONS}",
+                    target_dir: str = f"{HOME}") -> None:
+    for icon in scandir(icons_dir):
+        icon_name: str = icon.name
+        for target_file in scandir(target_dir):
+            target_name: str = target_file.name
+            if target_file.is_dir() \
+                    and (icon_name.lower().replace(" ", "-")[:-4] in target_name.lower().replace(" ", "-")):
+                if icon.is_file():
+                    target_path = target_file.path
+                    icon_path = icon.path
+                    system(f"gio set -t string '{target_path}' metadata::custom-icon "
+                           f"'file://{icon_path}'")
+                else:
+                    change_icon_dir(icons_dir=icon.path, target_dir=target_file.path)
+                break
     return None
 
 
