@@ -10,13 +10,12 @@ from .global_variables import *
 # pcloud      https://www.pcloud.com/download-free-online-cloud-file-storage.html
 
 # This install all applications I need in post install linux distribution based in debian.
-# FIXME: wait brave-browser, anydesk, bitwarden, toolbox, pandoc and pcloud
+# FIXME: wait brave-browser, bitwarden, toolbox, pandoc and pcloud
 #  release auto update apt or oficial flatpak support or generic link download (agnostic version).
 # TODO: install pympress by default or not? https://github.com/Cimbali/pympress/
 # TODO: OnionShare or RetroShare?
-# TODO: fdm or chrono?
 # TODO: .config/mimeapps.list
-# TODO: dconf dump /prg/cinnamon [>|<] file.txt
+# TODO: dconf dump /org/cinnamon [>|<] file.txt
 
 ppas: List[str] = []
 
@@ -28,7 +27,6 @@ deb_to_url: Dict[str, str] = {
 }
 
 apt_packages: List[str] = [
-    # "anydesk",
     # "brave-browser",
     "git",
     "gnome-clocks",
@@ -48,9 +46,8 @@ apt_packages: List[str] = [
 
 flatpak_packages: Dict[str, str] = {
     "barrier": "com.github.debauchee.barrier",          # official support
-    "blackbox": "com.raggesilver.BlackBox",             # official support
-    "colorway": "io.github.lainsce.Colorway",           # official support
-    "emulsion": "io.github.lainsce.Emulsion",           # official support
+    # "colorway": "io.github.lainsce.Colorway",           # official support
+    # "emulsion": "io.github.lainsce.Emulsion",           # official support
     "flameshot": "org.flameshot.Flameshot",             # official support
     "flatseal": "com.github.tchx84.Flatseal",           # official support
     # "neovim": "io.neovim.nvim",                         # official support
@@ -94,5 +91,6 @@ mkdir: List[str] = [
 ]
 
 dconf: Dict[str, str] = {
-    "/org/cinnamon/desktop/keybindings/": f"{DEFAULT_CONFIG}/dconf/keybindings.txt"
+    "/org/cinnamon/desktop/keybindings/": f"{DEFAULT_CONFIG}/dconf/keybindings.txt",
+    "/org/cinnamon/desktop/wm/": f"{DEFAULT_CONFIG}/dconf/wm.txt",
 }

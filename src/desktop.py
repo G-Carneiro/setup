@@ -14,7 +14,6 @@ from .global_variables import *
 
 def _update_ppas(ppas: List[str]) -> None:
     ppas += [
-        "flexiondotorg/mangohud",
         "tatokis/ckb-next"
     ]
     return None

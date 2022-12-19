@@ -1,0 +1,5 @@
+[preferences]
+button-layout=':minimize,maximize,close'
+min-window-opacity=30
+theme='Mint-Y'
+workspace-names=['CCO', 'Chats', 'Free', 'Extra']

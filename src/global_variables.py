@@ -1,7 +1,7 @@
 from os.path import dirname, abspath, expanduser
 
 
-PYTHON_VERSION: str = f"python3.10"
+PYTHON_VERSION: str = f"python3.11"
 HOME: str = expanduser("~")
 GIT: str = f"{HOME}/Git"
 VAR: str = f"{HOME}/.var"
