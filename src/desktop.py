@@ -37,6 +37,7 @@ def _update_flatpak_packages(flatpak_packages: Dict[str, str]) -> None:
     flatpak_packages.update({
         "AntiMicroX": "io.github.antimicrox.antimicrox",    # official support
         "Citra": "org.citra_emu.citra",                     # official support
+        "Heroic": "com.heroicgameslauncher.hgl",            # official support
         # "Kdenlive": "org.kde.kdenlive",                     # official support
         "Lutris": "net.lutris.Lutris",                      # official support
         # "obs-studio": "com.obsproject.Studio",              # official support
@@ -93,8 +94,8 @@ def update_all_packages(ppas: List[str],
     _update_deb(deb=deb)
     _update_ppas(ppas=ppas)
     _update_apt(apt_packages=apt_packages)
-    _update_flatpak_packages(flatpak_packages=flatpak_packages)
     _update_remove_apt_packages(remove_apt_packages=remove_apt_packages)
+    _update_flatpak_packages(flatpak_packages=flatpak_packages)
     _update_symlinks(symlinks=symlinks)
     _update_mkdir(mkdir=mkdir)
     _update_dconf(dconf=dconf)
